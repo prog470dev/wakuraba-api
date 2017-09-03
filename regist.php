@@ -1,6 +1,7 @@
 <?php
 
 try{
+  //DBに接続
   $pdo = new PDO(
     'mysql:dbname=homesec;host=localhost;charset=utf8',
     'homesec',
@@ -11,16 +12,15 @@ try{
     ]
   );
 
-  $stmt = $pdo->query("select * from commentTable");
-  while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-    $comment = $row['text'];
-    print($comment);
-    print("<br>");
-  }
+  //パラメータのデータを取得
+  $lati = $_GET["lati"];
+  $longi = $_GET["longi"];
+  $text = $_GET["text"];
 
-  $result_flag = $pdo->query("INSERT INTO commentTable (lati, longi, text) VALUES (10.50, 20.10, 'insert comment.')");
+  //受信情報を情報をDBに登録
+  $result_flag = $pdo->query("INSERT INTO commentTable (lati, longi, text) VALUES ($lati, $longi, $text)");
   if (!$result_flag) {
-  die('INSERTクエリーが失敗しました。'.mysql_error());
+  die('INSERT qury failed.'.mysql_error());
   }
 
 } catch (PDOException $e) {
