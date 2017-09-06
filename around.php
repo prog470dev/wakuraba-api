@@ -19,6 +19,7 @@ try{
   $longi = $_GET["longi"];
   $range = $_GET["range"];
 
+  //範囲計算
   $up_lati = $lati + $range;
   $lo_lati = $lati - $range;
   $up_lpngi = $longi + $range;
@@ -35,10 +36,10 @@ try{
     $lo = $row["longi"];
     $te = $row["text"];
 
-    array_merge($objects, array("lati" => $la, "longi" => $lo, "text" => $te));
+    array_push($objects, array("lati" => $la, "longi" => $lo, "text" => $te));
   }
 
-  //JSONを表示？
+  //JSONを表示
   $array = array("objects" => $objects);
   $json = json_encode($array);
   echo $json;
