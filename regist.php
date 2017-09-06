@@ -15,12 +15,14 @@ try{
   //パラメータのデータを取得
   $lati = $_GET["lati"];
   $longi = $_GET["longi"];
-  $text = $_GET["text"];
+
+  $t = $_GET["text"];
+  $text = "'".$t."'";
 
   //受信情報を情報をDBに登録
   $result_flag = $pdo->query("INSERT INTO commentTable (lati, longi, text) VALUES ($lati, $longi, $text)");
   if (!$result_flag) {
-  die('INSERT qury failed.'.mysql_error());
+    die('INSERT qury failed.'.mysql_error());
   }
 
 } catch (PDOException $e) {
