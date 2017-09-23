@@ -30,6 +30,9 @@ try{
 
   //範囲内のレコードを取得
   $stmt = $pdo->query("select * from commentTable where lati >= $lo_lati and lati <= $up_lati and longi >= $lo_longi and longi <= $up_longi");  //条件に合うレコードを取得
+  if (!$stmt) {
+    die('SELECT qury failed.'.mysql_error());
+  }
   while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
     $la = $row["lati"];
     $lo = $row["longi"];
