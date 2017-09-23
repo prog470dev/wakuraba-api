@@ -39,3 +39,7 @@ GET *http://homesec.s17.xrea.com/wakuraba-api/around.php?lati=40.5&longi=40.5&ra
   ]
 }
 ```
+
+# テーブル一覧表示
+## Resource URL
+*http://homesec.s17.xrea.com/wakuraba-api/showlist.php*
