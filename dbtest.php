@@ -12,6 +12,9 @@ try{
   );
 
   $stmt = $pdo->query("select * from commentTable");
+  if (!$stmt) {
+    die('SELECTクエリーが失敗しました。'.mysql_error());
+  }
   while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
     $comment = $row['text'];
     print($comment);
@@ -20,7 +23,7 @@ try{
 
   $result_flag = $pdo->query("INSERT INTO commentTable (lati, longi, text) VALUES (10.50, 20.10, 'insert comment.')");
   if (!$result_flag) {
-  die('INSERTクエリーが失敗しました。'.mysql_error());
+    die('INSERTクエリーが失敗しました。'.mysql_error());
   }
 
 } catch (PDOException $e) {
