@@ -1,15 +1,142 @@
-# テキスト登録API
-## Resource URL
-*http://homesec.s17.xrea.com/wakuraba-api/regist.php*
-## Parameters
+# わくらばAPI仕様
+
+====================
+
+## ランドマーク取得（現在地）API
+### Resource URL
+*http://homesec.s17.xrea.com/wakuraba-api/get_surround.php*
+### Parameters
 |Name|Description|Example|
 |-|-|-|
-|lati|現在地の緯度|40.5|
-|longi|現在地の軽度|40.5|
-|text|表示するテキスト|Hello|
-## Example Request
-GET *http://homesec.s17.xrea.com/wakuraba-api/regist.php?lati=40.5&longi=40.5&text=Hello*
-## Example Response
+|latitude|現在地の緯度|40.5|
+|longitude|現在地の軽度|40.5|
+|range|取得範囲(°)|0.5|
+### Example Request
+GET *http://homesec.s17.xrea.com/wakuraba-api/get_surround.php?latitude=40.5&longitude=40.5&range=0.5*
+### Example Response
+```
+{
+  "landmarks":[
+    {
+      "id":"3",
+      "lsti":40.5,
+      "longi":40.5,
+      "name":"金沢城",
+      "tag":"3&2"
+    },
+    {
+      "id":"19",
+      "lsti":20.5,
+      "longi":55.5,
+      "name":"兼六園",
+      "tag":"5"      
+    },
+    {
+      "id":"30",
+      "lsti":25.5,
+      "longi":55.5,
+      "name":"尾張神社",
+      "tag":"3"      
+    }
+  ]
+}
+```
+
+
+## ランドマーク取得（現在地・タグ）API
+### Resource URL
+*http://homesec.s17.xrea.com/wakuraba-api/get_surround_tag.php*
+### Parameters
+|Name|Description|Example|
+|-|-|-|
+|latitude|現在地の緯度|40.5|
+|longitude|現在地の軽度|40.5|
+|range|取得範囲(°)|0.5|
+|tag|タグ番号|3|
+### Example Request
+GET *http://homesec.s17.xrea.com/wakuraba-api/get_surround_tag.php?latitude=40.5&longitude=40.5&range=0.5&tag=3*
+### Example Response
+```
+{
+  "landmarks":[
+    {
+      "id":"3",
+      "lsti":40.5,
+      "longi":40.5,
+      "name":"金沢城",
+      "tag":"3&2"
+    },
+    {
+      "id":"30",
+      "lsti":25.5,
+      "longi":55.5,
+      "name":"尾張神社",
+      "tag":"3"      
+    }
+  ]
+}
+```
+
+
+## コメント取得（ランドマーク対応）API
+### Resource URL
+*http://homesec.s17.xrea.com/wakuraba-api/get_comments.php*
+### Parameters
+|Name|Description|Example|
+|-|-|-|
+|landmark_id|ランドマークID|3|
+|tweet_id|ツイートID|AAAABF242HGGG11|
+### Example Request
+GET *http://homesec.s17.xrea.com/wakuraba-api/get_comments.php?landmark_id=3&tweet_id=AAAABF242HGGG11*
+### Example Response
+```
+{
+  "comments":[
+    {
+      "landmark_id":"3",
+      "tweetid":"AAAABF242HGGG11"
+    },
+    {
+      "landmark_id":"43",
+      "tweetid":"AACCFBF240BBB11"  
+    }
+  ]
+}
+```
+
+
+## コメント登録（ランドマーク対応）API
+### Resource URL
+*http://homesec.s17.xrea.com/wakuraba-api/resist_comments.php*
+### Parameters
+|Name|Description|Example|
+|-|-|-|
+|landmark_id|ランドマークID|3|
+|tweet_id|ツイートID|AAAABF242HGGG11|
+### Example Request
+GET *http://homesec.s17.xrea.com/wakuraba-api/get_comments.php?landmark_id=3&tweet_id=AAAABF242HGGG11*
+### Example Response
+```
+{
+  "comments":[
+    {
+      "landmark_id":"3",
+      "tweetid":"AAAABF242HGGG11"
+    },
+    {
+      "landmark_id":"43",
+      "tweetid":"AACCFBF240BBB11"  
+    }
+  ]
+}
+```
+
+
+
+
+
+
+
 
 # 周辺コメント取得API
 ## Resource URL
@@ -37,61 +164,5 @@ GET *http://homesec.s17.xrea.com/wakuraba-api/around.php?lati=40.5&longi=40.5&ra
       "text":"foo bar"
     }
   ]
-}
-```
-
-# テーブル一覧表示
-## Resource URL
-*http://homesec.s17.xrea.com/wakuraba-api/showlist.php*
-
-/* 長方形の２ポイントよりも「中心座標」を登録させるほうが便利か？ */
-# 空間情報登録API
-## Resource URL
-*http://homesec.s17.xrea.com/wakuraba-api/registSpace.php*
-## Parameters
-|Name|Description|Example|
-|-|-|-|
-|id|登録空間のID|36|
-|name|登録空間の名前|金沢城|
-|lati1|登録空間の緯度１|40.5|
-|long1i登録空間の軽度１|40.5|
-|lati2|登録空間の緯度２|40.5|
-|long2i登録空間の軽度２|40.5|
-## Example Request
-GET *http://homesec.s17.xrea.com/wakuraba-api/registSpace.php?id=36&name="金沢城"&lati1=40.5&longi1=40.5&lati2=40.5&longi2=40.5
-## Example Response
-
-# 空間情報取得API
-## Resource URL
-*http://homesec.s17.xrea.com/wakuraba-api/aroundSpace.php*
-## Parameters
-|Name|Description|Example|
-|-|-|-|
-|lati|現在地の緯度|40.5|
-|longi|現在地の軽度|40.5|
-|range|取得範囲(°)|5.0|
-## Example Request
-GET *http://homesec.s17.xrea.com/wakuraba-api/aroundSpace.php?lati=40.5&longi=40.5&range=5.0*
-## Example Response
-```
-{
-    "comments":[
-        {
-            "id":36,
-            "name":"金沢城",
-            "lsti1":40.5,
-            "longi1":40.5,
-            "lsti2":40.5,
-            "longi2":40.5,
-            },
-            {
-            "id":36,
-            "name":"金沢城",
-            "lsti1":40.5,
-            "longi1":40.5,
-            "lsti2":40.5,
-            "longi2":40.5,
-        }
-    ]
 }
 ```
