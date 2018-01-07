@@ -1,76 +1,26 @@
-<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
-
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<title>get_comments</title>
-
-</head>
-
-<body>
-<style>
-    table{
-        border-collapse:collapse;
-    }
-    th{
-        border:solid 1px;
-        padding:1em;
-    }
-    td{
-        border:solid 1px;
-        padding:0.5em;
-    }
-</style>
-<table>
-<caption>コメント取得</caption>
-<tr>
-    <th></th>
-    <th>ランドマークID</th>
-    <th>ツイートID</th>
-</tr>
-
 <?php
+//コメント取得
+$landmark_id=$_GET['landmark_id'];
+//JSON形式
+header('Content-type: application/json; charset=utf-8')
 //接続設定
 $dsn='mysql:dbname=homesec;host=localhost';
 $user='homesec';
 $password='password';
 //データベースへ接続
-$sql='SELECT*FROM resist WHERE 1';
+$sql='SELECT*FROM tweet_table WHERE 1';
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 
-while(1)
+$Data=array();
+while($rec=$stmt->fetch(PDO::FETCH_ASSOC))
 {
-print'<p>';
-$rec=$stmt->fetch(PDO::FETCH_ASSOC);
-
-if($rec==false)
-{
-break;
+    $Data[]=array(
+        $rec['landmark_id'],
+        $rec['tweetid']
+    );
 }
-print'<tr>';
-print'<td><input type="checkbox" name="check" value="'.$rec['id'].'"></td>';
-print'<td>';
-print$rec['landmark_id'];
-print'</td><td>';
-print$rec['tweetid'];
-print'</td>';
-print'</tr>';
-print'</p>';
-
-}
-
-print'</table>';
-
+print json_encode($Data);
+//切断
 $dbh=null;
 ?>
-
-</form>
-</br>
-
-</body>
-
-</html>

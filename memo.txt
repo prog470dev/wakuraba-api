@@ -1,0 +1,10 @@
+$s=mysql_connect("localhost","root",'')or die("¸”s‚Å‚·");
+print'¬Œ÷‚Å‚·';
+mysql_select_db("homesec",$s);
+mysql_query("INSERT INTO homesec(comments,tweetid) VALUES($comments,$tweetid)");
+mysql_close($s);
+
+mysql“ü‚Á‚½‚ç
+use homesec;
+table‚ğŒ©‚é
+show tables;
