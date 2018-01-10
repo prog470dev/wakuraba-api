@@ -1,7 +1,7 @@
 <<?php
 //コメント登録
 $c=$_GET['comments'];
-$comments="'".$comments."'";
+$comments="'".$c."'";
 $tweetid=$_GET['tweetid'];
 //JSON形式
 header('Content-type: application/json; charset=utf-8')
@@ -13,7 +13,7 @@ $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 //データベースにコメント登録
 $sql='INSERT INTO comments(comments,tweetid)VALUES("'.$comments.'","'.$tweetid.'")';
-$stmt=$dbh->prepare($sql);
+$stmt=$dbh->prepare($sql)
 $stmt->execute();
 
 $Data=array();

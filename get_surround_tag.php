@@ -21,14 +21,13 @@ $stmt->execute();
 $Data=array();
 while($rec=$stmt->fetch(PDO::FETCH_ASSOC))
 {
-
 $Data[]=array(
     $rec['id'],
     $rec['lsti'],
     $rec['longi'],
     $rec['name'],
     $rec['tag']
-);
+  );
 }
 
 print json_encode($Data);

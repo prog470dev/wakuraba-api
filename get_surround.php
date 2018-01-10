@@ -18,8 +18,8 @@ $stmt=$dbh->prepare($sql);
 $stmt->execute();
 
 
-$Data=array($rec=$stmt->fetch(PDO::FETCH_ASSOC));
-while(){
+$Data=array();
+while($rec=$stmt->fetch(PDO::FETCH_ASSOC)){
   $Data[]=array(
       $rec['id'],
       $rec['latitude'],
