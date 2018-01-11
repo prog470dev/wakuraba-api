@@ -18,7 +18,7 @@ while($rec=$stmt->fetch(PDO::FETCH_ASSOC))
 {
     $Data[]=array(
         $rec['landmark_id'],
-        $rec['tweetid']
+        $rec['name']
     );
 }
 print json_encode($Data);

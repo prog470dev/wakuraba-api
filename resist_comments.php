@@ -1,8 +1,7 @@
 <<?php
 //コメント登録
-$c=$_GET['comments'];
-$comments="'".$c."'";
-$tweetid=$_GET['tweetid'];
+$lan_id=$_GET['landmark_id'];
+$twe_id=$_GET['tweet_id'];
 //JSON形式
 header('Content-type: application/json; charset=utf-8')
 //接続設定
@@ -12,14 +11,14 @@ $password='password';
 $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 //データベースにコメント登録
-$sql='INSERT INTO comments(comments,tweetid)VALUES("'.$comments.'","'.$tweetid.'")';
+$sql='INSERT INTO tweet_table(landmark_id,name)VALUES("'.$lan_id.'","'.$twe_id.'")';
 $stmt=$dbh->prepare($sql)
 $stmt->execute();
 
 $Data=array();
 $Data[]=array(
     $rec['landmark_id'],
-    $rec['tweetid']
+    $rec['name']
 );
 print json_encode($Data);
 $dbh=null;
