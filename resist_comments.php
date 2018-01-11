@@ -12,7 +12,7 @@ $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 //データベースにコメント登録
 $sql='INSERT INTO tweet_table(landmark_id,name)VALUES("'.$lan_id.'","'.$twe_id.'")';
-$stmt=$dbh->prepare($sql)
+$stmt=$dbh->prepare($sql);
 $stmt->execute();
 
 $Data=array();
