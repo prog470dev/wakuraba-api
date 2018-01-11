@@ -2,7 +2,6 @@
 //ランドマーク（現在地）取得
 $lsti=$_GET['latitude'];
 $longi=$_GET['longitude'];
-$ran=$_GET['range'];
 //JSON形式
 header('Content-type: application/json; charset=utf-8')
 //接続設定
@@ -13,10 +12,9 @@ $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 .
 //データベースへ接続
-$sql='SELECT*FROM landmark_table WHERE $latitude == $lsti && $longitudde == $longi && $range==$ran';
+$sql='SELECT*FROM landmark_table WHERE latitude == $lsti && longitude == $longi';
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
-
 
 $Data=array();
 while($rec=$stmt->fetch(PDO::FETCH_ASSOC)){
