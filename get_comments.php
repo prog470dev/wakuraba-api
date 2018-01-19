@@ -1,8 +1,8 @@
 <?php
 //コメント取得
-$lan_id=$_GET['landmark_id'];
+$landmark_id=$_GET['landmark_id'];
 //JSON形式
-header('Content-type: application/json; charset=utf-8')
+header('Content-type: application/json; charset=utf-8');
 //接続設定
 $dsn='mysql:dbname=homesec;host=localhost';
 $user='homesec';
