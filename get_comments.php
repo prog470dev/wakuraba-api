@@ -9,7 +9,7 @@ $user='homesec';
 $password='password';
 //データベースへ接続
 
-$sql='SELECT*FROM tweet_table WHERE landmark_id = $lan_id';
+$sql='SELECT*FROM tweet_table WHERE landmark_id IN( $lan_id )';
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 
