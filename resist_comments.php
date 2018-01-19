@@ -1,4 +1,4 @@
-<<?php
+<?php
 	//コメント登録
 	$lan_id=$_GET['landmark_id'];
 	$twe_id=$_GET['tweet_id'];
