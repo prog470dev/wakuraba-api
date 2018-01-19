@@ -14,7 +14,8 @@ $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 
 //データベースへ接続
-$sql='SELECT*FROM landmark_table WHERE 1';
+$sql='SELECT*FROM landmark_table WHERE ABS(latitude - $lsti) <= $ran && ABS(longitude - $longi) <= $ran && tag like "%$tag%"
+';
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 

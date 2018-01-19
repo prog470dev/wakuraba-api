@@ -6,7 +6,7 @@ $ran=$_GET['range'];
 //JSON形式
 header('Content-type: application/json; charset=utf-8')
 //接続設定
-$dsn='mysql:dbname=homesec;host=homesec';
+$dsn='mysql:dbname=homesec;host=localhost';
 $user='homesec';
 $password='password';
 $dbh=new PDO($dsn,$user,$password);
