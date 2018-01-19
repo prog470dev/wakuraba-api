@@ -3,7 +3,7 @@
 $lsti=$_GET['latitude'];
 $longi=$_GET['longitude'];
 $ran=$_GET['range'];
-$tag=$_BET['tag'];
+$tag=$_GET['tag'];
 //Json形式
 header('Content-type: application/json; charset=utf-8');
 //接続設定

@@ -4,7 +4,7 @@ $lsti=$_GET['latitude'];
 $longi=$_GET['longitude'];
 $ran=$_GET['range'];
 //JSON形式
-header('Content-type: application/json; charset=utf-8')
+header('Content-type: application/json; charset=utf-8');
 //接続設定
 $dsn='mysql:dbname=homesec;host=localhost';
 $user='homesec';
