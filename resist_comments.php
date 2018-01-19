@@ -5,6 +5,6 @@ $tweet_id=$_GET['tweet_id'];
 
 $s=mysql_connect("homesec","homesec","password",'');
 mysql_select_db("homesec",$s);
-mysql_query("INSERT INTO regist(landmark_id,tweet_id) VALUES($landmark_id,$tweet_id)");
+mysql_query("INSERT INTO regist(landmark_id,name) VALUES($landmark_id,$tweet_id)");
 mysql_close($s);
 ?>
