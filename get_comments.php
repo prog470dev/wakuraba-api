@@ -11,7 +11,7 @@ $dbh=new PDO($dsn,$user,$password);
 $dbh->query('SET NAMES utf8');
 //データベースへ接続
 
-$sql='SELECT*FROM tweet_table WHERE landmark_id IN( $lan_id )';
+$sql='SELECT*FROM tweet_table WHERE 1';
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 

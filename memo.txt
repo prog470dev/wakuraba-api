@@ -8,3 +8,11 @@ mysql“ü‚Á‚½‚ç
 use homesec;
 table‚ðŒ©‚é
 show tables;
+
+–ß‚é
+exec
+
+WHERE‚ÌŒãsurround
+ABS(latitude - $lsti) <= $ran && ABS(longitude - $longi) <= $ran && tag like "%$tag%"
+ ABS(latitude - $lsti) <= $ran AND ABS(longitude - $longi) <= $ran
+ landmark_id IN( $lan_id )
