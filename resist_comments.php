@@ -22,15 +22,16 @@
 
 	//$dbh->query('SET NAMES utf8');
 	//データベースにコメント登録
-	$sql="INSERT INTO tweet_table (landmark_id, name) VALUES ("'".$lan_id."'","'".$twe_id."'")";
+
+	/////$sql="INSERT INTO tweet_table (landmark_id, name) VALUES ("'".$lan_id."'","'".$twe_id."'")";
 
 	//$stmt=$dbh->prepare($sql);
 	//$stmt->execute();
 
-	$result_flag = $pdh->query($sql)
-	if (!$result_flag) {
-		die('INSERT qury failed.'.mysql_error());
-	}
+	/////$result_flag = $pdh->query($sql)
+	/////if (!$result_flag) {
+	/////	die('INSERT qury failed.'.mysql_error());
+	/////}
 
-	$dbh=null;
+	/////$dbh=null;
 ?>
