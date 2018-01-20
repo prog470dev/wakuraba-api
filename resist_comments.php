@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: text/plain; charset=UTF-8', true, 500);
 try{
 
 	//JSON形式
@@ -22,7 +21,7 @@ try{
 
 	//コメント登録
 	$lan_id=$_GET['landmark_id'];
-	$lan_id="'".$lan_id."'"
+	//$lan_id="'".$lan_id."'"
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
 
