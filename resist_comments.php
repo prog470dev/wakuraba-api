@@ -4,12 +4,21 @@
 	$twe_id=$_GET['tweet_id'];
 	//JSON形式
 	//header('Content-type: application/json; charset=utf-8')
-	//接続設定
 
-	$dsn='mysql:dbname=homesec;host=localhost';
-	$user='homesec';
-	$password='password';
-	$dbh=new PDO($dsn,$user,$password);
+	//接続設定
+	//$dsn='mysql:dbname=homesec;host=localhost';
+	//$user='homesec';
+	//$password='password';
+	//$dbh=new PDO($dsn,$user,$password);
+	$pdh = new PDO(
+		'mysql:dbname=homesec;host=localhost;charset=utf8',
+		'homesec',
+		'password',
+		[
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		]
+	);
 
 	//$dbh->query('SET NAMES utf8');
 	//データベースにコメント登録
