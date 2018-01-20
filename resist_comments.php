@@ -9,6 +9,7 @@ try{
 	//$user='homesec';
 	//$password='password';
 	//$dbh=new PDO($dsn,$user,$password);
+	/*
 	$pdh = new PDO(
 		'mysql:dbname=homesec;host=localhost;charset=utf8',
 		'homesec',
@@ -18,6 +19,7 @@ try{
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 		]
 	);
+	*/
 
 	//コメント登録
 	$lan_id=$_GET['landmark_id'];
@@ -25,8 +27,8 @@ try{
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
 
-	//echo $lan_id;
-	//echo $twe_id;
+	echo $lan_id;
+	echo $twe_id;
 
 	//$dbh->query('SET NAMES utf8');
 
