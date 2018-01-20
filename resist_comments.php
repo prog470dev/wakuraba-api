@@ -1,5 +1,5 @@
 <?php
-try{
+//try{
 
 	//JSON形式
 	//header('Content-type: application/json; charset=utf-8')
@@ -47,11 +47,11 @@ try{
 	}
 	*/
 
-	$dbh=null;
+	//$dbh=null;
 
-} catch (PDOException $e) {
-	header('Content-Type: text/plain; charset=UTF-8', true, 500);
-	exit($e->getMessage());
-}
+//} catch (PDOException $e) {
+//	header('Content-Type: text/plain; charset=UTF-8', true, 500);
+//	exit($e->getMessage());
+///}
 
 ?>
