@@ -114,16 +114,4 @@ GET *http://homesec.s17.xrea.com/wakuraba-api/get_comments.php?landmark_id=3*
 GET *http://homesec.s17.xrea.com/wakuraba-api/resist_comments.php?landmark_id=3&tweet_id=AAAABF242HGGG11*
 ### Example Response
 ```
-{
-  "comments":[
-    {
-      "landmark_id":"3",
-      "tweetid":"AAAABF242HGGG11"
-    },
-    {
-      "landmark_id":"43",
-      "tweetid":"AACCFBF240BBB11"  
-    }
-  ]
-}
 ```
