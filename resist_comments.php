@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/plain; charset=UTF-8', true, 500);
 try{
 
 	//JSON形式
@@ -25,6 +26,9 @@ try{
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
 
+	echo $lan_id;
+	echo $twe_id;
+
 	//$dbh->query('SET NAMES utf8');
 
 	//データベースにコメント登録
@@ -34,10 +38,13 @@ try{
 	//$stmt->execute();
 
 	//$result_flag = $pdh->query($sql)
+
+	/*
 	$result_flag = $pdh->query("INSERT INTO tweet_table (landmark_id, name) VALUES ($lan_id, $twe_id)")
 	if (!$result_flag) {
 		die('INSERT qury failed.'.mysql_error());
 	}
+	*/
 
 	/////$dbh=null;
 
