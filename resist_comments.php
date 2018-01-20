@@ -28,7 +28,7 @@
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
 
-	echo "<h1>".$twe_id."  <h1>"
+	echo $twe_id
 /*
 	echo $lan_id;
 	echo $twe_id;
