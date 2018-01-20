@@ -26,8 +26,8 @@ try{
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
 
-	echo $lan_id;
-	echo $twe_id;
+	//echo $lan_id;
+	//echo $twe_id;
 
 	//$dbh->query('SET NAMES utf8');
 
@@ -50,7 +50,6 @@ try{
 
 } catch (PDOException $e) {
 	header('Content-Type: text/plain; charset=UTF-8', true, 500);
-	echo '<p>Hello World</p>';
 	exit($e->getMessage());
 }
 ?>
