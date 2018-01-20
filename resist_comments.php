@@ -22,12 +22,12 @@
 	*/
 
 	//コメント登録
-/*
+
 	$lan_id=$_GET['landmark_id'];
 	//$lan_id="'".$lan_id."'"
 	$twe_id=$_GET['tweet_id'];
 	$twe_id="'".$twe_id."'"
-
+/*
 	echo $lan_id;
 	echo $twe_id;
 */
