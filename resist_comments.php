@@ -22,6 +22,7 @@
 	*/
 
 	//コメント登録
+/*
 	$lan_id=$_GET['landmark_id'];
 	//$lan_id="'".$lan_id."'"
 	$twe_id=$_GET['tweet_id'];
@@ -29,7 +30,7 @@
 
 	echo $lan_id;
 	echo $twe_id;
-
+*/
 	//$dbh->query('SET NAMES utf8');
 
 	//データベースにコメント登録
