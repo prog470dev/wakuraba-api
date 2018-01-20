@@ -18,7 +18,7 @@
 	//$stmt=$dbh->prepare($sql);
 	//$stmt->execute();
 
-	$result_flag = $pdo->query($sql)
+	$result_flag = $pdh->query($sql)
 	if (!$result_flag) {
 		die('INSERT qury failed.'.mysql_error());
 	}
