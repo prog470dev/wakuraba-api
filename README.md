@@ -109,7 +109,7 @@ GET *http://homesec.s17.xrea.com/wakuraba-api/get_comments.php?landmark_id=3*
 |Name|Description|Example|
 |-|-|-|
 |landmark_id|ランドマークID|3|
-|tweet_id|ツイートID|AAAABF242HGGG11|
+|name|ツイートID|AAAABF242HGGG11|
 ### Example Request
 GET *http://homesec.s17.xrea.com/wakuraba-api/resist_comments.php?landmark_id=3&tweet_id=AAAABF242HGGG11*
 ### Example Response
